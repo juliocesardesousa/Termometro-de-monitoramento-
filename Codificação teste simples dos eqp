@@ -1,0 +1,24 @@
+
+#include <DHT.h>
+DHT dht (26, DHT22);
+
+void setup() {
+  
+  dht.begin();
+  delay(2000);
+
+  Serial.begin(115200);
+}
+
+void loop(){
+  float temp = dht.readTemperature();
+  floar humidity = dht.readHumidity();
+  
+  Serial.print("Temp: ");
+  Serial.print(temp);
+  serial.print(" C ");
+  Serial.print("Humidade: ");
+  Serial.print(humidity);
+  Serial.println(" % ");
+  delay(2000);
+}
